@@ -53,7 +53,7 @@ To run this project, you will need the following dependencies:
 
 ### How it works
 
-The program uses the Mediapipe library to detect landmarks on the hand and fingers of the user in real-time. These landmarks are then fed into a feedforward neural network (FNN) that was trained on an Indian Sign Language (ISL) dataset from Kaggle. The FNN predicts the class of the hand gesture based on the detected landmarks.
+The program uses the Mediapipe library to detect landmarks on the hand and fingers of the user in real-time. These landmarks are then fed into a feedforward neural network (FNN) that was trained on an Indian Sign Language (ISL) dataset. The FNN predicts the class of the hand gesture based on the detected landmarks.
 
 During execution, the program uses the webcam to capture video frames, applies the Mediapipe hand detection model to detect the hand in each frame, and extracts the hand landmarks. The extracted landmarks are then passed to the classification model, which predicts the class of the hand gesture. The predicted class is displayed on the video stream in real-time.
 
@@ -61,15 +61,12 @@ During execution, the program uses the webcam to capture video frames, applies t
 
 ## File Descriptions
 
+- `data_collection.py`: This file helps u collect hand gestures and labelling them
 - `isl_detection.py`: This file is the main python file for real-time ISL detection.
-- `dataset_keypoint_generation.py`: This file converts [ISL kaggle image dataset](https://www.kaggle.com/datasets/prathumarikeri/indian-sign-language-isl) to 42 landmarks.
+- `dataset_keypoint_generation.py`: This file converts the images to 42 landmarks.
 - `keypoint.csv`: This file contains the 42 landmarks for all images.
 - `ISL_classifier.ipynb`: The notebook is used to create a classifier model to classify the hand gestures.
 - `model.h5`: This is the classifier model.
-
-### Examples
-![example image 1](images/example1.png)
-![example image 2](images/example2.png)
 
 ### Future Improvements
 
@@ -78,6 +75,5 @@ The following improvements can be made to the project:
 - Expand the dataset to include more examples of each ISL gesture to improve the accuracy of the classification model.
 - Implement a more sophisticated model architecture, such as a convolutional neural network (CNN), to improve the accuracy of the classification model.
 - Add support for more ISL gestures.
-- Implement a feature to convert the recognized gestures into text or speech.
-- Make the program more user-friendly by adding a GUI.
+- Make the program more user-friendly.
 
